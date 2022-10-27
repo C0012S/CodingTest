@@ -67,6 +67,7 @@ Error Message:
 Memory error occured, (e.g. segmentation error, memory limit Exceed, stack overflow,... etc)
 
 다시 풀어 봐야 한다.
+  → split(' ') 대신 split() 사용하면 오류가 발생하지 않는다.
 """
 
 
@@ -74,7 +75,8 @@ T = int(input()) # 테스트 케이스의 수
 
 for t in range(T):
     num = int(input()) # 테스트 케이스의 번호
-    score = list(map(int, input().split(' '))) # 점수
+#    score = list(map(int, input().split(' '))) # 점수
+    score = list(map(int, input().split()))  # 점수  # split(' ') 대신 split() 사용하면 오류 발생 X
 
     score_count_list = [0] * 101 # 점수의 개수를 저장할 리스트
 
@@ -86,6 +88,14 @@ for t in range(T):
     for j in score: # 입력한 점수 리스트에서
         if score_count_list[j] == max(score_count_list): # 그 점수가 최빈수라면
             score_max_list.append(j)
+
+    """
+    # 위 코드 대신 이 코드를 사용해도 Runtime error  # 이 코드도 split(' ') 대신 split() 사용하면 오류 발생 X
+    score_max_list = list()  # 가장 많은 개수의 점수 리스트 (최빈수가 여러 개일 경우를 위해 생성)
+    for j in range(0, len(score_count_list)):
+        if score_count_list[j] == max(score_count_list):  # 그 점수가 최빈수라면
+            score_max_list.append(j)
+    """
 
     # 최빈수 최댓값 찾기
     score_max = score_max_list[0]
