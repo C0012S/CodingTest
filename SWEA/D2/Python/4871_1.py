@@ -60,6 +60,7 @@
 
 
 # 실행 시간 : 0.13626s
+# 실행 시간 : 0.12784s
 
 T = int(input())
 
@@ -95,7 +96,7 @@ for t in range(1, T + 1):
     print("#%d" % t, result)
     """
 
-#    graph = [[0] * (V + 1) for _ in range(V + 1)] # 밑의 코드와 다른 결과  # graph[0][0] = 1을 하면 graph[x][0] 모두 1이 된다.
+#    graph = [[0] * (V + 1)] * (V + 1) # 밑의 코드와 다른 결과  # graph[0][0] = 1을 하면 graph[x][0] 모두 1이 된다.
     graph = [[] * (V + 1) for _ in range(V + 1)]
 
     for e in range(E):
