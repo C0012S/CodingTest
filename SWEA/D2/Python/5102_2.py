@@ -1,5 +1,5 @@
 """
-5102. [파이썬 S/W 문제해결 기본] 6일차 - 피자 굽기
+5102. [파이썬 S/W 문제해결 기본] 6일차 - 노드의 거리
 
     · 시간 : 10개 테스트케이스를 합쳐서 C/C++의 경우 1초 / Java의 경우 2초
     · 메모리 : 힙, 정적 메모리 합쳐서 256MB 이내, 스택 메모리 1MB 이내
@@ -8,6 +8,8 @@
     V개의 노드 개수와 방향성이 없는 E개의 간선 정보가 주어진다.
     주어진 출발 노드에서 최소 몇 개의 간선을 지나면 도착 노드에 갈 수 있는지 알아내는 프로그램을 만드시오.
     예를 들어 다음과 같은 그래프에서 1에서 6으로 가는 경우, 두 개의 간선을 지나면 되므로 2를 출력한다.
+        [그림은 SW Expert Academy에서 참고]
+
     노드 번호는 1번부터 존재하며, 노드 중에는 간선으로 연결되지 않은 경우도 있을 수 있다.
 
     [입력]
@@ -55,38 +57,28 @@
 """
 
 
-# 다시 풀어 봐야 한다.
-
-
-# 실행 시간 : 0.15791s
-# 오답 : 10개의 테스트케이스 중 9개가 맞았습니다.
+# 실행 시간 : 0.16326s
+# Pass
 
 from collections import deque
 
 
 def arrive_node(start_graph):
     visited = [False] * (V + 1)
-    distance = [1000] * (V + 1)
+    distance = [0] * (V + 1)
 
     graph_queue = deque()
     graph_queue.append(S)
-    distance[S] = 0
+    visited[S] = True
 
     while graph_queue:
         now_node = graph_queue.popleft()
 
-        if visited[now_node] == False:
-            for ll in range(len(start_graph[now_node])):
-                graph_queue.append(start_graph[now_node][ll])
-
-            visited[now_node] = True
-
-            if start_graph[now_node]:
-                for nn in range(len(start_graph[now_node])):
-                    distance[start_graph[now_node][nn]] = min(distance[now_node] + 1, distance[start_graph[now_node][nn]])
-
-        else:
-            continue
+        for i in start_graph[now_node]:
+            if not visited[i]:
+                graph_queue.append(i)
+                distance[i] = distance[now_node] + 1
+                visited[i] = True
 
     return distance[G]
 
