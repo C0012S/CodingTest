@@ -49,6 +49,18 @@ Easy. #1729 - Find Followers Count
 */
 
 
+/*
+    Runtime
+        545ms
+
+    Beats
+        81.88%
+
+    Time Complexity
+        O(NlogN)
+*/
+
+
 -- 정답
 
 SELECT user_id, COUNT(*) AS followers_count
