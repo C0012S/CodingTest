@@ -86,7 +86,7 @@ Easy. #1068 - Product Sales Analysis I
 */
 
 
--- 정답
+-- 정답 
 
 SELECT product_name, year, price
 FROM Sales S JOIN Product P
