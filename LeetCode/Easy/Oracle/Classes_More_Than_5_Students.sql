@@ -65,7 +65,7 @@ Easy. #596 - Classes More Than 5 Students
 */
 
 
--- 정답
+-- 정답 
 
 SELECT class
 FROM (SELECT class, COUNT(*) AS student_count
