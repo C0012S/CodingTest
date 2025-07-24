@@ -113,7 +113,7 @@ Easy. #607 - Sales Person
 */
 
 
--- 정답
+-- 정답 
 
 SELECT SP.name
 FROM SalesPerson SP
