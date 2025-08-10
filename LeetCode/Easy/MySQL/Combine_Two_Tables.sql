@@ -72,7 +72,7 @@ Easy. #175 - Combine Two Tables
         405ms
 
     Beats
-        53.56%
+        53.74%
 
     Time Complexity
         O(N)
