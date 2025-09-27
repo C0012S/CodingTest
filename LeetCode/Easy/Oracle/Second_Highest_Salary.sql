@@ -1,7 +1,7 @@
 /*
-Easy. #176 - Second Highest Salary
+Med. #176 - Second Highest Salary
 
-    Accepted  1,300,600 / 2.9M    Acceptance Rate  45.1%
+    Accepted  1,300,624 / 2.9M    Acceptance Rate  45.1%
 
 
     Table: Employee
@@ -56,3 +56,26 @@ Easy. #176 - Second Highest Salary
             +---------------------+
 */
 
+
+/*
+    Runtime
+        400ms
+
+    Beats
+        41.71%
+
+    Time Complexity
+        O(Nlogn)
+*/
+
+
+-- 정답
+
+WITH EMP AS (
+    SELECT DENSE_RANK() OVER (ORDER BY salary DESC) AS RNK, salary
+    FROM Employee
+)
+
+SELECT MAX(EMP.salary) AS SecondHighestSalary
+FROM EMP
+WHERE EMP.RNK = 2;
