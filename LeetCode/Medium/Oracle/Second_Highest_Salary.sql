@@ -1,5 +1,5 @@
 /*
-Med. #176 - Second Highest Salary
+Medium. #176 - Second Highest Salary
 
     Accepted  1,300,624 / 2.9M    Acceptance Rate  45.1%
 
