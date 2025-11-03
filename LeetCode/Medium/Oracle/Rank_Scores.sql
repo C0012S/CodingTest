@@ -1,5 +1,5 @@
 /*
-Med. #178 - Rank Scores
+Medium. #178 - Rank Scores
 
     Accepted  569,933 / 860.7K    Acceptance Rate  66.2%
 
