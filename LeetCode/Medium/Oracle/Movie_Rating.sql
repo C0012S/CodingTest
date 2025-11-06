@@ -1,7 +1,7 @@
 /*
 Medium. #1341 - Movie Rating
 
-    Accepted  244,197 / 580.4K    Acceptance Rate  42.1%
+    Accepted  244,211 / 580.4K    Acceptance Rate  42.1%
 
 
     Table: Movies
@@ -98,3 +98,39 @@ Medium. #1341 - Movie Rating
             Frozen 2 and Joker have a rating average of 3.5 in February but Frozen 2 is smaller lexicographically.
 */
 
+
+/*
+    Runtime
+        1102ms
+
+    Beats
+        75.69%
+
+    Time Complexity
+        O(Nlogn + Mlogm)
+*/
+
+
+-- 정답
+
+SELECT name AS results
+FROM (
+         SELECT U.name,
+                ROW_NUMBER() OVER (ORDER BY R.CNT DESC, U.name ASC) AS NUM
+         FROM Users U JOIN (SELECT user_id, COUNT(*) AS CNT
+                            FROM MovieRating
+                            GROUP BY user_id) R
+                           ON U.user_id = R.user_id)
+WHERE NUM = 1
+UNION ALL
+SELECT title AS results
+FROM (
+         SELECT MON, title,
+                ROW_NUMBER() OVER (ORDER BY AVG(rating) DESC, title ASC) AS NUM
+         FROM (SELECT M.movie_id, M.title, R.rating,
+                      TO_CHAR(R.created_at, 'YYYY-MM') AS MON
+               FROM Movies M JOIN MovieRating R
+                                  ON M.movie_id = R.movie_id)
+         WHERE MON = '2020-02'
+         GROUP BY MON, title)
+WHERE NUM = 1;
