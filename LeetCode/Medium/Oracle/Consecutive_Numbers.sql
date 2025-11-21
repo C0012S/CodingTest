@@ -1,5 +1,5 @@
 /*
-Med. #180 - Consecutive Numbers
+Medium. #180 - Consecutive Numbers
 
     Accepted  646,262 / 1.4M    Acceptance Rate  47.0%
 
