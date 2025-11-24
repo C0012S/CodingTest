@@ -1,5 +1,5 @@
 /*
-Med. #184 - Department Highest Salary
+Medium. #184 - Department Highest Salary
 
     Accepted  568,251 / 1M    Acceptance Rate  56.2%
 
