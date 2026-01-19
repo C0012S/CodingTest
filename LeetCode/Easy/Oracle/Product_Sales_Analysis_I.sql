@@ -33,7 +33,7 @@ Easy. #1068 - Product Sales Analysis I
         Each row of this table indicates the product name of each product.
 
 
-    Write a solution to report the , , and for each in the table.product_nameyearpricesale_idSales
+    Write a solution to report the product_name, year, and price for each sale_id in the Sales table.
     Return the resulting table in any order.
     The result format is in the following example.
 
