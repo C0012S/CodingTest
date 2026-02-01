@@ -75,6 +75,9 @@ Easy. #1661 - Average Time of Process per Machine
 
     Beats
         47.87%
+
+    Time Complexity
+        O(NlogN)
 */
 
 
