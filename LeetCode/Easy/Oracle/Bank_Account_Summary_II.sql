@@ -82,6 +82,9 @@ Easy. #1587 - Bank Account Summary II
 
     Beats
         94.12%
+
+    Time Complexity
+        O(NlogN)
 */
 
 
