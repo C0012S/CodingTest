@@ -84,7 +84,7 @@ Easy. #1581 - Customer Who Visited but Did Not Make Any Transactions
         1049ms
 
     Beats
-        82.23%
+        66.41%
 */
 
 
